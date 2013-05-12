@@ -1832,6 +1832,11 @@ msgid "Test to measure the network bandwidth"
 msgstr ""
 
 #. description
+#: ../jobs/opencompute.txt.in:8
+msgid "Open Compute Project tests"
+msgstr ""
+
+#. description
 #: ../jobs/optical.txt.in:8
 msgid "Test to detect the optical drives"
 msgstr ""
