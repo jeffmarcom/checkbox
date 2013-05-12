@@ -1,0 +1,40 @@
+plugin: shell
+name: opencompute/ipmi/admin/dcmi_info
+requires: package.name == 'ipmiutil'
+user: root
+command: ipmiutil dcmi -N $OC_IPMI_TARGET $OC_IPMI_ADMIN $IPMI_ADMIN_PASSWORD
+_description:
+ Get DCMI capabilities with Admin User
+
+plugin: shell
+name: opencompute/ipmi/user/dcmi_info
+requires: package.name == 'ipmiutil'
+user: root
+command: ipmiutil dcmi -N $OC_IPMI_TARGET $OC_IPMI_USERNAME $IPMI_PASSWORD
+_description:
+ Get DCMI capabilities with User
+
+plugin: shell
+name: opencompute/ipmi/operator/dcmi_info
+requires: package.name == 'ipmiutil'
+user: root
+command: ipmiutil dcmi -N $OC_IPMI_TARGET $OC_IPMI_OPERATOR $IPMI_OPERATOR_PASSWORD
+_description:
+ Get DCMI capabilities with Operator
+
+plugin: shell
+name: opencompute/ipmi/admin/chassis_status
+requires: package.name == 'ipmitool'
+user: root
+command: ipmitool -I lanplus -H $OC_IPMI_TARGET -U $OC_IPMI_ADMIN -P $IPMI_ADMIN_PASSWORD chassis status
+_description:
+ Retrieve Chassis Status information with Admin credentials
+
+plugin: shell
+name: opencompute/ipmi/user/chassis_status
+requires: package.name == 'ipmitool'
+user: root
+command: ipmitool -I lanplus -H $OC_IPMI_TARGET -U $OC_IPMI_USER -P $IPMI_USER_PASSWORD chassis status
+_description:
+ Retrieve Chassis Status information with User credentials
+

@@ -173,6 +173,13 @@ command:
   shopt -s extglob
   cat $CHECKBOX_SHARE/jobs/networking.txt?(.in)
 
+name: __opencompute__
+plugin: local
+_description: Opencompute Tests
+command:
+  shopt -s extglob
+  cat $CHECKBOX_SHARE/jobs/opencompute.txt?(.in)
+
 name: __optical__
 plugin: local
 _description: Optical Drive tests
